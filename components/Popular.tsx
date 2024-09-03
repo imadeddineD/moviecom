@@ -28,7 +28,7 @@ return (
       <div className="cards">
       {data.map((dt, index) => {
         return (
-        <Link href="" className='card'>
+        <Link href="" className='card' key={index}>
           <Image
               src={dt.Poster} 
               alt={dt.Title} 
