@@ -12,12 +12,12 @@ const BannerHome = () => {
 
     const handleNext = ()=>{
         if(currentImage < data.length - 1){
-            setCurrentImage(preve => preve + 1)
+            setCurrentImage((preve : any) => preve + 1)
         }
     }
     const handleprevious = ()=>{
         if(currentImage > 0){
-            setCurrentImage(preve => preve - 1)
+            setCurrentImage((preve : any) => preve - 1)
         }
     }
 
@@ -34,7 +34,7 @@ const BannerHome = () => {
     },[data,currentImage])
   return (
     <section className='w-full h-full'>
-        <div className='flex min-h-full max-h-[95vh] overflow-hidden'>
+        <div className='flex  max-h-[95vh] overflow-hidden'>
       {data.map((dt, index) => {
         return (
             <div key={index} className='min-w-full min-h-[450px] lg:min-h-full overflow-hidden relative group transition-all'
@@ -69,7 +69,7 @@ const BannerHome = () => {
         </div>
 
         <div className='container mx-auto'>
-        <div className=' w-full absolute bottom-0 max-w-md px-3'>
+        <div className=' w-full absolute bottom-[45vh] max-w-md px-3'>
         <h2 className='font-bold text-2xl lg:text-4xl text-white drop-shadow-2xl '>{dt?.Title}</h2>
         <p className='text-ellipsis line-clamp-3 my-2'>{dt?.Plot}</p>
         <div className='flex items-center gap-4'>
@@ -77,14 +77,14 @@ const BannerHome = () => {
                                             <span>|</span>
                                             <p>View : { Number(dt.imdbVotes).toFixed(0) }</p>
         </div>
-        <Link 
+        {/* <Link 
         href={""}
         // href={"/"+data?.media_type+"/"+data.id}
         >
             <button  className=' bg-white px-4 py-2 text-black font-bold rounded mt-4  hover:bg-gradient-to-l from-blue-900 to-blue-800 shadow-md transition-all hover:scale-105'>
                 Play Now
             </button>
-        </Link>
+        </Link> */}
         </div>
         </div>
 
